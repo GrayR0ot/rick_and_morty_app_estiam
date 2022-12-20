@@ -9,7 +9,6 @@ const Header = () => {
     const {theme, handleThemeChange} = useContext(ThemeContext)
 
     useEffect(() => {
-        console.log(theme)
     }, [theme])
 
     return (
