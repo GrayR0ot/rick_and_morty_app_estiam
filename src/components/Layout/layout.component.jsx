@@ -13,7 +13,9 @@ const Layout = ({children}) => {
     return (
         <Provider value={{theme, handleThemeChange}}>
             <Header/>
-            {children}
+            <div className={`background ${theme}`}>
+                {children}
+            </div>
         </Provider>
     )
 }

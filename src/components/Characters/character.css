@@ -1,0 +1,115 @@
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* center the rows and columns */
+    margin: 10%; /* add a margin of 10% in each direction */
+}
+
+.card {
+    position: relative; /* add this to make the title appear in front of the image */
+    display: flex;
+    flex-direction: column;
+    width: 20%; /* adjust this value to control the width of the cards */
+    min-width: 300px; /* set a minimum width to prevent cards from becoming too small on smaller screens */
+    border-radius: 10px; /* round the edges of the cards */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+}
+
+.card-light {
+    background-color: #fff;
+}
+
+.card-dark {
+    background-color: #000;
+}
+
+.card img {
+    width: 100%;
+    height: 200px; /* set the height of the image */
+    object-fit: cover;
+}
+
+.card-title {
+    position: absolute; /* add this to make the title appear in front of the image */
+    top: 10px; /* adjust the position of the title */
+    left: 10px; /* adjust the position of the title */
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.card-title-light {
+    color: #fff; /* make the title text white to contrast with the image */
+}
+
+
+.card-title-dark {
+    color: #000000; /* make the title text white to contrast with the image */
+}
+
+.card .status {
+    position: absolute; /* add this to make the title appear in front of the image */
+    top: 10px; /* adjust the position of the title */
+    right: 10px; /* adjust the position of the title */
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff; /* make the title text white to contrast with the image */
+}
+
+.card .category {
+    font-size: 14px;
+    color: #666;
+    margin: 10px;
+    color: #fff; /* make the title text white to contrast with the image */
+}
+
+/* make the cards responsive */
+@media only screen and (max-width: 1200px) {
+    .card {
+        width: 25%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .card {
+        width: 33.3333%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.indicator.online {
+    background: #28B62C;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    -webkit-animation: pulse-animation 2s infinite linear;
+}
+
+@-webkit-keyframes pulse-animation {
+    0% { -webkit-transform: scale(1); }
+    25% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.2) }
+    75% { -webkit-transform: scale(1); }
+    100% { -webkit-transform: scale(1); }
+}
+
+.indicator.offline {
+    background: #FF4136;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+
+}

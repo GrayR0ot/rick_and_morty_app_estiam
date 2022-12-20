@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {config} from "../config";
+import Characters from "../components/Characters/characters.component";
 
 const CharactersPage = () => {
 
@@ -21,7 +22,7 @@ const CharactersPage = () => {
         }).catch((fail) => errorNotification(fail.toString()))
     }, [])
     return (
-        {}
+        <Characters characters={characters}/>
     )
 }
 
