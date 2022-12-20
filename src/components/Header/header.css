@@ -1,0 +1,49 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+}
+
+.dark-light-toggle {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.light {
+    background: #fff;
+    color: #333;
+}
+
+.light nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dark {
+    background: #333;
+    color: #fff;
+}
+
+.dark nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.dark .dark-light-toggle {
+    color: #fff;
+}
