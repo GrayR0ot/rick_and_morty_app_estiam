@@ -2,6 +2,7 @@ import {ThemeContext} from "../Layout/layout.component";
 import {useContext, useEffect} from "react";
 import {capitalize} from "lodash"
 import './header.css'
+import {Link} from "react-router-dom";
 
 const Header = () => {
 
@@ -15,9 +16,9 @@ const Header = () => {
         <header className={theme}>
             <div className="logo">Rick & Morty</div>
             <nav>
-                <a href="#">Page1</a>
-                <a href="#">Page2</a>
-                <a href="#">Page3</a>
+                <Link to="/characters">Characters</Link>
+                <Link to="/episodes">Episodes</Link>
+                <Link to="/locations">Locations</Link>
             </nav>
             <button onClick={handleThemeChange} className="dark-light-toggle">
                 {capitalize(theme)} Mode
