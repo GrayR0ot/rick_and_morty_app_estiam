@@ -2,6 +2,7 @@
 
 ### Auteur: Léo MORICEAU - E5 WMD
 ### Ecole: ESTIAM
+### Langue du projet: Anglais
 ### Installation du projet `npm install`
 ### Démérage du projet `npm run start`
 
@@ -31,6 +32,7 @@
 
 ### Features supplémentaires:
 - Possibilité de passer en mode sombre / clair en haut à droite (https://prnt.sc/8db2VY9UXSN_)
+- Possibilité de filtrer les personnages "/characters" par nom, Status, Genders et Species
 
 ### Architecture:
 - Le fichier App.js contient les routes et la mise en forme de la page
