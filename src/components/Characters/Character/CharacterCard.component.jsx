@@ -12,19 +12,20 @@ const CharacterCard = (props) => {
     const [character, setCharacter] = useState(props.character)
 
     return (
-        <div className={`card ${theme}`}>
-            <div className="card-header">
-                <div className="card-status">{character.status}</div>
+        <Link to={`/characters/${character.id}`} style={{textDecoration: "none"}}>
+            <div className={`card ${theme}`}>
+                <div className="card-header">
+                    <div className="card-status">{character.status}</div>
+                </div>
+                <img src={character.image} alt="card image"/>
+                <div className={`card-name ${theme}`}>{character.name}</div>
+                <div className="card-footer">
+                    <div className={`card-species`}><FontAwesomeIcon icon={faFire}/> {character.species}</div>
+                    <div className={`card-location`}><FontAwesomeIcon icon={faMapMarkerAlt}/> {character.location.name}
+                    </div>
+                </div>
             </div>
-            <img src={character.image} alt="card image"/>
-            <Link to={`/characters/${character.id}`} style={{textDecoration: "none"}}>
-                <div className={`card-name card-title-${theme}`}>{character.name}</div>
-            </Link>
-            <div className="card-footer">
-                <div className={`card-species`}><FontAwesomeIcon icon={faFire} /> {character.species}</div>
-                <div className={`card-location`}><FontAwesomeIcon icon={faMapMarkerAlt} /> {character.location.name}</div>
-            </div>
-        </div>
+        </Link>
     )
 
 }

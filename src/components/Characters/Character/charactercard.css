@@ -5,10 +5,18 @@
     position: relative;
     background-color: #333;
     border: 5px solid #ddd;
+    height: 380px;
 }
+
 .card.light {
     background-color: #fff;
     border: 5px solid #333;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .card img {
@@ -17,14 +25,22 @@
 }
 
 .card-status {
-    color: #333;
     font-weight: bold;
+    color: #fff;
+}
+
+.card-status.light {
+    color: #333;
 }
 
 .card-name {
     margin: 0.5rem 0;
     font-size: 1.2rem;
     font-weight: 500;
+    color: #fff
+}
+
+.card-name.light {
     color: #333
 }
 
@@ -45,21 +61,19 @@
 
 .card-footer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0.5rem;
     font-size: 0.9rem;
     color: #999;
 }
 
-.card-species {
+.card-footer .card-location {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    text-align: center;
 }
 
-.card-location {
-    text-align: center;
+.card-footer .card-species {
     margin-top: 0.25rem;
     font-size: 0.9rem;
 }
