@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import './character.css'
 import CharacterCard from "./Character/CharacterCard.component";
 import SearchBarComponent from "../Search/SearchBar.component";
 import {useContext, useEffect, useState} from "react";
@@ -111,7 +110,7 @@ const Characters = (props) => {
                     })
                 }
 
-                <div className="card-list">
+                <div className="card-grid">
                     {filtered().map((character) => {
                         return (
                             <CharacterCard key={character.id} character={character}/>

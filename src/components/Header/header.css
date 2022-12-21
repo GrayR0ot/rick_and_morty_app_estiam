@@ -64,13 +64,13 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #fff;
-    color: #333;
-    border-bottom: 1px solid #ddd;
-}
-
-header.dark {
     background-color: #333;
     color: #fff;
     border-bottom: 1px solid #333;
+}
+
+header.light {
+    background-color: #fff;
+    color: #333;
+    border-bottom: 1px solid #ddd;
 }

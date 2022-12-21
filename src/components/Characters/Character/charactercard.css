@@ -1,0 +1,65 @@
+.card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    background-color: #333;
+    border: 5px solid #ddd;
+}
+.card.light {
+    background-color: #fff;
+    border: 5px solid #333;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-status {
+    color: #333;
+    font-weight: bold;
+}
+
+.card-name {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333
+}
+
+.card-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.card-species {
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    text-align: center;
+}
+
+.card-location {
+    text-align: center;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+}
