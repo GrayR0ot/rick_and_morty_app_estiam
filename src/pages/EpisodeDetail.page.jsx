@@ -4,26 +4,27 @@ import axios from "axios";
 import {config} from "../config";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {GlobalContext} from "../components/Layout/Layout.component";
-import CharacterDetail from "../components/Character/CharacterDetail/CharacterDetail.component";
+import CharacterList from "../components/Character/CharacterList/CharacterList.component";
+import EpisodeCharacters from "../components/Episode/EpisodeCharacters/EpisodeCharacters.component";
 
-const CharacterDetailPage = (props) => {
+const EpisodeDetail = (props) => {
 
     let {id} = useParams();
     const {handleLoadingChange} = useContext(GlobalContext)
-    const [character, setCharacter] = useState()
+    const [episode, setEpisodes] = useState()
 
     useEffect(() => {
         handleLoadingChange(true)
-        axios.get(config.API_URL + '/character/' + id, {
+        axios.get(config.API_URL + '/episode/' + id, {
             headers: {
                 'Content-type': 'application/json'
             }
         }).then((res) => {
             if (res?.data?.id) {
-                successNotification(`Loaded character '${res.data.name}'`)
+                successNotification(`Loaded episode '${res.data.name}'`)
 
-                setCharacter(res.data)
-            } else errorNotification("Unable to find this character on our API!")
+                setEpisodes(res.data)
+            } else errorNotification("Unable to find this episode on our API!")
         }).catch((fail) => errorNotification(fail.toString()))
             .finally(() => {
                 handleLoadingChange(false)
@@ -31,11 +32,11 @@ const CharacterDetailPage = (props) => {
     }, [])
 
     return (
-        character?.name ?
-            <CharacterDetail character={character}/>
+        episode?.name ?
+            <EpisodeCharacters characterURLs={episode.characters}/>
             :
             ''
     )
 }
 
-export default CharacterDetailPage
+export default EpisodeDetail
