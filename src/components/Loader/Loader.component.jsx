@@ -1,9 +1,11 @@
 import './loader.css';
 
-const Loader = () => {
+const Loader = ({loading}) => {
 
     return (
-        <div className="clock-loader"/>
+        <div style={{display: loading ? 'flex' : 'none'}} className="clock-container">
+            <div className="clock-loader"/>
+        </div>
     )
 }
 

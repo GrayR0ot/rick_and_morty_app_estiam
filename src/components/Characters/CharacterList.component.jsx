@@ -55,7 +55,6 @@ const Characters = (props) => {
             errorNotification('Unable to find any result with text `' + search + '`')
             return []
         }
-        console.log(results)
         return results
     }
 

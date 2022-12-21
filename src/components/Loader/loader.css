@@ -1,11 +1,17 @@
-.clock-loader {
+.clock-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   margin: 0;
   background: black;
+}
+
+.clock-loader {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4rem;
   height: 4rem;
   border: 3px solid #61dafb;
