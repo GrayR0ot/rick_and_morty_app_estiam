@@ -2,35 +2,70 @@ import PropTypes from 'prop-types';
 import './character.css'
 import CharacterCard from "./Character/CharacterCard.component";
 import SearchBarComponent from "../Search/SearchBar.component";
-import {useContext} from "react";
+import {useContext, useEffect, useState} from "react";
 import {GlobalContext} from "../Layout/Layout.component";
 import {errorNotification} from "../../helpers/notification.helper";
 
 const Characters = (props) => {
 
-    const {characters} = props
+    const {characters, status} = props
     const {search} = useContext(GlobalContext)
+
+    const [filter, setFilter] = useState({
+        status: []
+    })
+
+    const handleStatusFilter = (e) => {
+        const state = e.target.getAttribute('data-status')
+        const newStatus = filter.status.includes(state) ? [...filter.status.filter(x => x !== state)] : [...filter.status, state]
+        setFilter({
+            ...filter,
+            status: newStatus
+        })
+    }
 
     const filtered = () => {
         const results = characters.filter(character => character.name.toLowerCase().includes(search.toLocaleString()))
-        if(!results.length) {
+            .filter((character) => !filter.status.length || filter.status.includes(character.status.toLowerCase()))
+        if (!results.length) {
             errorNotification('Unable to find any result with text `' + search + '`')
             return []
         }
+        console.log(results)
         return results
     }
 
+    useEffect(() => {
+    }, [])
+
     return (
-        <div>
-            <SearchBarComponent/>
-            <div className="card-list">
-                {filtered().map((character, index) => {
-                    return (
-                        <CharacterCard key={index} character={character}/>
-                    )
-                })}
+        characters.length && status.length ?
+            <div>
+                <SearchBarComponent/>
+
+                {
+                    status.map((status, index) => {
+                        return (
+                            <div key={index}>
+                                <input type="checkbox" onChange={handleStatusFilter}
+                                       value={!filter.status || filter.status.includes(status)}
+                                       data-status={status}/>
+                                {status}
+                            </div>
+                        )
+                    })
+                }
+
+                <div className="card-list">
+                    {filtered().map((character) => {
+                        return (
+                            <CharacterCard key={character.id} character={character}/>
+                        )
+                    })}
+                </div>
             </div>
-        </div>
+            :
+            <></>
     )
 }
 
@@ -54,7 +89,8 @@ Characters.propTypes = {
         status: PropTypes.string.isRequired,
         type: PropTypes.string.isRequired,
         url: PropTypes.string.isRequired
-    }))
+    })),
+    status: PropTypes.arrayOf(PropTypes.string)
 }
 
 export default Characters
