@@ -1,18 +1,35 @@
-import PropTypes from'prop-types';
+import PropTypes from 'prop-types';
 import './character.css'
 import CharacterCard from "./Character/CharacterCard.component";
+import SearchBarComponent from "../Search/SearchBar.component";
+import {useContext} from "react";
+import {GlobalContext} from "../Layout/Layout.component";
+import {errorNotification} from "../../helpers/notification.helper";
 
 const Characters = (props) => {
 
     const {characters} = props
+    const {search} = useContext(GlobalContext)
+
+    const filtered = () => {
+        const results = characters.filter(character => character.name.toLowerCase().includes(search.toLocaleString()))
+        if(!results.length) {
+            errorNotification('Unable to find any result with text `' + search + '`')
+            return []
+        }
+        return results
+    }
 
     return (
-        <div className="card-list">
-            {characters.map((character, index) => {
-                return (
-                    <CharacterCard key={index} character={character}/>
-                )
-            })}
+        <div>
+            <SearchBarComponent/>
+            <div className="card-list">
+                {filtered().map((character, index) => {
+                    return (
+                        <CharacterCard key={index} character={character}/>
+                    )
+                })}
+            </div>
         </div>
     )
 }

@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {config} from "../config";
-import Characters from "../components/Characters/characters.component";
+import Characters from "../components/Characters/Characters.component";
 
 const CharactersPage = () => {
 

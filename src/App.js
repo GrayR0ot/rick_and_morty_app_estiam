@@ -2,9 +2,9 @@ import './App.css';
 import {Navigate, Route, Routes} from "react-router-dom"
 import {Toaster} from "react-hot-toast";
 import {lazy, Suspense, useEffect} from "react";
-import Layout from "./components/Layout/layout.component";
+import Layout from "./components/Layout/Layout.component";
 import {successNotification} from "./helpers/notification.helper";
-import Loader from "./components/Loader/loader.component";
+import Loader from "./components/Loader/Loader.component";
 
 const CharactersPage = lazy(() => import("./pages/characters.page"));
 const EpisodesPage = lazy(() => import("./pages/episodes.page"));

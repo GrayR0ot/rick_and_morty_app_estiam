@@ -1,4 +1,4 @@
-import {ThemeContext} from "../Layout/layout.component";
+import {GlobalContext} from "../Layout/Layout.component";
 import {useContext, useEffect} from "react";
 import {capitalize} from "lodash"
 import './header.css'
@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const Header = () => {
 
-    const {theme, handleThemeChange} = useContext(ThemeContext)
+    const {theme, handleThemeChange} = useContext(GlobalContext)
 
     useEffect(() => {
     }, [theme])

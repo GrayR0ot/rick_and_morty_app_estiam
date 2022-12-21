@@ -1,10 +1,10 @@
 import PropTypes from "prop-types";
 import {useContext, useState} from "react";
-import {ThemeContext} from "../../Layout/layout.component";
+import {GlobalContext} from "../../Layout/Layout.component";
 
 const CharacterCard = (props) => {
 
-    const {theme} = useContext(ThemeContext)
+    const {theme} = useContext(GlobalContext)
     const [character, setCharacter] = useState(props.character)
 
     return (
