@@ -1,0 +1,49 @@
+.character-container {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    background-color: #333;
+    border: 5px solid #ddd;
+}
+
+.character-container.light {
+    background-color: #fff;
+    border: 5px solid #333;
+}
+
+.character-container img {
+    width: 50%;
+    height: auto;
+}
+
+.character-container-name {
+    margin: 0.5rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #fff
+}
+
+.character-container-name.light {
+    color: #333
+}
+
+.character-container-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    color: #999;
+}
+
+.character-container-footer .character-container-location {
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.character-container-footer .character-container-other {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+}

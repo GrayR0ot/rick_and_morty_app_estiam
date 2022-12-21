@@ -4,7 +4,7 @@ import axios from "axios";
 import {config} from "../config";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {GlobalContext} from "../components/Layout/Layout.component";
-import CharacterCard from "../components/Character/CharacterCard/CharacterCard.component";
+import CharacterDetail from "../components/Character/CharacterDetail/CharacterDetail.component";
 
 const CharacterDetailPage = (props) => {
 
@@ -34,7 +34,7 @@ const CharacterDetailPage = (props) => {
 
     return (
         character?.name ?
-            <CharacterCard character={character}/>
+            <CharacterDetail character={character}/>
             :
             ''
     )
