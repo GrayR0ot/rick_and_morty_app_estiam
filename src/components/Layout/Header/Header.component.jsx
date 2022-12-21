@@ -1,4 +1,4 @@
-import {GlobalContext} from "../Layout/Layout.component";
+import {GlobalContext} from "../Layout.component";
 import {useContext, useEffect} from "react";
 import {capitalize} from "lodash"
 import './header.css'

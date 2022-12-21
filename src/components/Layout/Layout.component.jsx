@@ -1,7 +1,8 @@
 import {createContext, useState} from "react";
-import Header from "../Header/Header.component";
+import Header from "./Header/Header.component";
 import Loader from "../Loader/Loader.component";
 import "./layout.css"
+import Footer from "./Footer/Footer.component";
 
 
 export const GlobalContext = createContext()
@@ -24,6 +25,7 @@ const Layout = ({children}) => {
                 <div className={`container ${theme}`}>
                     {children}
                 </div>
+                <Footer/>
             </div>
         </Provider>
     )
