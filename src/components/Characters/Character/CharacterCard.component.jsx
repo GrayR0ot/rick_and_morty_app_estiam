@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import {useContext, useState} from "react";
 import {GlobalContext} from "../../Layout/Layout.component";
+import {Link} from "react-router-dom";
 
 const CharacterCard = (props) => {
 
@@ -10,7 +11,9 @@ const CharacterCard = (props) => {
     return (
         <div className={`card card-${theme}`}>
             <img src={character.image} alt="card image"/>
-            <div className={`card-title card-title-${theme}`}>{character.name}</div>
+            <Link to={`/characters/${character.id}`}>
+                <div className={`card-title card-title-${theme}`}>{character.name}</div>
+            </Link>
             <div className={`status indicator ${character.status.toLowerCase() === 'alive' ? 'online' : 'offline'}`}/>
             <div className={`card-category card-category-${theme}`}>{character.species} - {character.location.name}</div>
         </div>

@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import axios from "axios";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {config} from "../config";
-import Characters from "../components/Characters/Characters.component";
+import Characters from "../components/Characters/CharacterList.component";
 import {uniq} from "lodash";
 
 const CharactersPage = () => {

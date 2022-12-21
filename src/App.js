@@ -6,9 +6,10 @@ import Layout from "./components/Layout/Layout.component";
 import {successNotification} from "./helpers/notification.helper";
 import Loader from "./components/Loader/Loader.component";
 
-const CharactersPage = lazy(() => import("./pages/characters.page"));
-const EpisodesPage = lazy(() => import("./pages/episodes.page"));
-const LocationsPage = lazy(() => import("./pages/locations.page"));
+const CharactersPage = lazy(() => import("./pages/Characters.page"));
+const CharacterDetailPage = lazy(() => import("./pages/CharacterDetail.page"));
+const EpisodesPage = lazy(() => import("./pages/Episodes.page"));
+const LocationsPage = lazy(() => import("./pages/Locations.page"));
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path="/characters" element={<CharactersPage/>}/>
+                    <Route path="/characters/:id" element={<CharacterDetailPage/>}/>
                     <Route path="/episodes" element={<EpisodesPage/>}/>
                     <Route path="/locations" element={<LocationsPage/>}/>
                     <Route path="/*" element={<Navigate to="/characters" replace/>}/>

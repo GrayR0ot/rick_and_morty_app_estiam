@@ -1,5 +1,6 @@
-import {createContext, useState} from "react";
+import {createContext, Fragment, useState} from "react";
 import Header from "../Header/Header.component";
+import Loader from "../Loader/Loader.component";
 
 
 export const GlobalContext = createContext()
