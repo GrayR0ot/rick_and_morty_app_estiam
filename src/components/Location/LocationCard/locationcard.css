@@ -5,7 +5,7 @@
     position: relative;
     background-color: #333;
     border: 5px solid #ddd;
-    height: 390px;
+    height: 380px;
 }
 
 .card.light {
@@ -68,12 +68,12 @@
     color: #999;
 }
 
-.card-footer .card-location {
+.card-footer .card-type {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
 }
 
-.card-footer .card-other {
+.card-footer .card-dimension {
     margin-top: 0.25rem;
     font-size: 0.9rem;
 }

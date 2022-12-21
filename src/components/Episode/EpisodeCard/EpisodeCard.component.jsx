@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
 import {useContext} from "react";
 import {GlobalContext} from "../../Layout/Layout.component";
-import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCalendar, faPeopleGroup} from "@fortawesome/free-solid-svg-icons";
 import "./episodecard.css"
@@ -13,17 +12,17 @@ const EpisodeCard = (props) => {
 
     return (
         <div className={`card ${theme}`}>
-            <Link to={`/episode/${episode.id}`} style={{textDecoration: "none"}}>
-                <div className="card-header">
-                    <div className="card-status">{episode.episode}</div>
+            <div className="card-header">
+                <div className="card-episode">{episode.episode}</div>
+            </div>
+            <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="card image"/>
+            <div className={`card-name ${theme}`}>{episode.name}</div>
+            <div className="card-footer">
+                <div className={`card-species`}><FontAwesomeIcon
+                    icon={faPeopleGroup}/> {episode.characters.length} characters
                 </div>
-                <img src="https://rickandmortyapi.com/api/character/avatar/2.jpeg" alt="card image"/>
-                <div className={`card-name ${theme}`}>{episode.name}</div>
-                <div className="card-footer">
-                    <div className={`card-date`}><FontAwesomeIcon icon={faCalendar}/> {episode.air_date}</div>
-                    <div className={`card-species`}><FontAwesomeIcon icon={faPeopleGroup}/> {episode.characters.length} characters</div>
-                </div>
-            </Link>
+                <div className={`card-date`}><FontAwesomeIcon icon={faCalendar}/> {episode.air_date}</div>
+            </div>
         </div>
     )
 

@@ -2,13 +2,13 @@ import {useContext, useEffect, useState} from "react";
 import axios from "axios";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {config} from "../config";
-import CharacterList from "../components/Characters/CharacterList/CharacterList.component";
+import CharacterList from "../components/Character/CharacterList/CharacterList.component";
 import {uniq} from "lodash";
 import {GlobalContext} from "../components/Layout/Layout.component";
 
 const CharactersPage = () => {
 
-    const {handleLoadingChange} = useContext(GlobalContext)
+    const {handleLoadingChange, loading} = useContext(GlobalContext)
 
     const [characters, setCharacters] = useState([])
     const [status, setStatus] = useState([])
@@ -33,7 +33,7 @@ const CharactersPage = () => {
             } else errorNotification("Unable to find any character on our API!")
         }).catch((fail) => errorNotification(fail.toString()))
             .finally(() => handleLoadingChange(false))
-    }, [])
+    }, [config.API_URL])
     return (
         <CharacterList characters={characters} status={status} genders={genders} species={species}/>
     )

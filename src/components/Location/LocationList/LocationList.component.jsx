@@ -2,16 +2,16 @@ import PropTypes from 'prop-types';
 import SearchBar from "../../Search/SearchBar.component";
 import {useContext, useEffect} from "react";
 import {GlobalContext} from "../../Layout/Layout.component";
-import EpisodeCard from "../EpisodeCard/EpisodeCard.component";
+import LocationCard from "../LocationCard/LocationCard.component";
 import {errorNotification} from "../../../helpers/notification.helper";
 
-const EpisodeList = (props) => {
+const LocationList = (props) => {
 
-    const {episodes} = props
+    const {locations} = props
     const {search} = useContext(GlobalContext)
 
     const filtered = () => {
-        const results = episodes.filter(episode => episode.name.toLowerCase().includes(search.toLocaleString()))
+        const results = locations.filter(location => location.name.toLowerCase().includes(search.toLocaleString()))
         if (!results.length) {
             errorNotification('Unable to find any result with text `' + search + '`')
             return []
@@ -23,15 +23,15 @@ const EpisodeList = (props) => {
     }, [])
 
     return (
-        episodes.length ?
+        locations.length ?
             <div>
                 <div className="search-bar-and-filter" style={{marginBottom: '2%'}}>
                     <SearchBar/>
                 </div>
 
                 <div className="card-grid">
-                    {filtered().map((episode) => {
-                        return <EpisodeCard key={episode.id} episode={episode}/>
+                    {filtered().map((location) => {
+                        return <LocationCard key={location.id} location={location}/>
                     })}
                 </div>
             </div>
@@ -40,16 +40,16 @@ const EpisodeList = (props) => {
     )
 }
 
-EpisodeList.propTypes = {
-    episodes: PropTypes.arrayOf(PropTypes.shape({
-        air_date: PropTypes.string.isRequired,
-        characters: PropTypes.array.isRequired,
-        created: PropTypes.string.isRequired,
-        episode: PropTypes.string.isRequired,
+LocationList.propTypes = {
+    locations: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired
+        type: PropTypes.string.isRequired,
+        dimension: PropTypes.string.isRequired,
+        residents: PropTypes.arrayOf(PropTypes.string).isRequired,
+        url: PropTypes.string.isRequired,
+        created: PropTypes.string.isRequired
     }))
 }
 
-export default EpisodeList
+export default LocationList

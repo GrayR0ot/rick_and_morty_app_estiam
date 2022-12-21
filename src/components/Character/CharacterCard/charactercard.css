@@ -5,7 +5,7 @@
     position: relative;
     background-color: #333;
     border: 5px solid #ddd;
-    height: 380px;
+    height: 400px;
 }
 
 .card.light {
@@ -24,12 +24,12 @@
     height: auto;
 }
 
-.card-episode {
+.card-status {
     font-weight: bold;
     color: #fff;
 }
 
-.card-episode.light {
+.card-status.light {
     color: #333;
 }
 
@@ -68,7 +68,12 @@
     color: #999;
 }
 
-.card-footer .card-date {
+.card-footer .card-location {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
+}
+
+.card-footer .card-other {
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
 }

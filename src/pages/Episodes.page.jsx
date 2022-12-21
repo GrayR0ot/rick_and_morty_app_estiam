@@ -20,13 +20,13 @@ const EpisodesPage = () => {
             }
         }).then((res) => {
             if(res?.data?.info?.count) {
-                successNotification(`Loaded ${res.data.info.count} episode from our API!`)
+                successNotification(`Loaded ${res.data.info.count} episodes from our API!`)
 
                 setEpisodes(res.data.results)
             } else errorNotification("Unable to find any episode on our API!")
         }).catch((fail) => errorNotification(fail.toString()))
             .finally(() => handleLoadingChange(false))
-    }, [])
+    }, [config.API_URL])
     return (
         <EpisodeList episodes={episodes}/>
     )
