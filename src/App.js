@@ -1,9 +1,10 @@
 import './App.css';
-import {Route, Routes, Navigate} from "react-router-dom"
+import {Navigate, Route, Routes} from "react-router-dom"
 import {Toaster} from "react-hot-toast";
-import {Fragment, lazy, Suspense, useEffect} from "react";
+import {lazy, Suspense, useEffect} from "react";
 import Layout from "./components/Layout/layout.component";
 import {successNotification} from "./helpers/notification.helper";
+import Loader from "./components/Loader/loader.component";
 
 const CharactersPage = lazy(() => import("./pages/characters.page"));
 const EpisodesPage = lazy(() => import("./pages/episodes.page"));
@@ -16,19 +17,17 @@ function App() {
     }, [])
 
     return (
-        <Fragment>
+        <Suspense fallback={<Loader/>}>
             <Toaster/>
             <Layout>
-                <Suspense fallback={<h1>Loading...</h1>}>
-                    <Routes>
-                        <Route path="/characters" element={<CharactersPage/>}/>
-                        <Route path="/episodes" element={<EpisodesPage/>}/>
-                        <Route path="/locations" element={<LocationsPage/>}/>
-                        <Route path="/*" element={<Navigate to="/characters" replace/>}/>
-                    </Routes>
-                </Suspense>
+                <Routes>
+                    <Route path="/characters" element={<CharactersPage/>}/>
+                    <Route path="/episodes" element={<EpisodesPage/>}/>
+                    <Route path="/locations" element={<LocationsPage/>}/>
+                    <Route path="/*" element={<Navigate to="/characters" replace/>}/>
+                </Routes>
             </Layout>
-        </Fragment>
+        </Suspense>
     );
 }
 
