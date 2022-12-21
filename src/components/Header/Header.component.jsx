@@ -13,13 +13,13 @@ const Header = () => {
 
     return (
         <header className={theme}>
-            <div className="logo">Rick & Morty</div>
+            <div className={`logo ${theme}`}>Rick & Morty</div>
             <nav>
-                <Link to="/characters">Characters</Link>
-                <Link to="/episodes">Episodes</Link>
-                <Link to="/locations">Locations</Link>
+                <Link to="/characters"><a className={theme}>Characters</a></Link>
+                <Link to="/episodes"><a className={theme}>Episodes</a></Link>
+                <Link to="/locations"><a className={theme}>Locations</a></Link>
             </nav>
-            <button onClick={handleThemeChange} className="dark-light-toggle">
+            <button onClick={handleThemeChange} className={`dark-light-toggle ${theme}`}>
                 {capitalize(theme)} Mode
             </button>
         </header>

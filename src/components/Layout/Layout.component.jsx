@@ -19,12 +19,10 @@ const Layout = ({children}) => {
     return (
         <Provider value={{theme, handleThemeChange, search, handleSearchChange, loading, handleLoadingChange}}>
             <Loader loading={loading}/>
-            <div style={{display: loading ? 'none' : 'block'}}>
+            <div className={`background ${theme}`} style={{display: loading ? 'none' : 'block'}}>
                 <Header/>
-                <div className={`background ${theme}`}>
-                    <div className="container">
-                        {children}
-                    </div>
+                <div className={`container ${theme}`}>
+                    {children}
                 </div>
             </div>
         </Provider>
