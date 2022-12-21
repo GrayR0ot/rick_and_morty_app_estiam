@@ -40,7 +40,7 @@ const EpisodeDetail = (props) => {
 
     return (
         location?.name ?
-            <LocationCharacters characterURLs={location.residents}/>
+            <LocationCharacters location={location} characterURLs={location.residents}/>
             :
             ''
     )

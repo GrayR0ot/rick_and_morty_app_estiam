@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# Projet Frontend Rick & Morty - ESTIAM
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Auteur: Léo MORICEAU - E5 WMD
+### Ecole: ESTIAM
+### Installation du projet `npm install`
+### Démérage du projet `npm run start`
 
-## Available Scripts
+## Outils / Librairies utilisées:
+- FortAwesome
+- FontAwesome
+- Axios
+- Lodash
+- PropTypes
+- React Hot Toast
+- React
 
-In the project directory, you can run:
+### Design patterns mis en oeuvre:
+- HOC
+- Props Controllés
+- Composant Composés (GlobalProvider)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Routes disponibles:
+- /characters => Affichage des personnages (https://prnt.sc/nqlWWeb-eOxS)
+- /characters/:id => Affichage de la page détail d'un personnage (https://prnt.sc/dHa6nL54sgUn)
+- /episodes => Affichage des épisodes (https://prnt.sc/1qff5Xeci9Yt)
+- /episodes/:id => Affichage des personnages d'un épisode (https://prnt.sc/nZg1W82ckhhx)
+- /locations => Affichage des positions (https://prnt.sc/1eTQ32aiBd89)
+- /locations/:id => Affichage des personnages d'une position (https://prnt.sc/IrWLWNT0UyKi)
+- * => Redirection en cas d'erreur utilisateur sur la page des personnages
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Features supplémentaires:
+- Possibilité de passer en mode sombre / clair en haut à droite (https://prnt.sc/8db2VY9UXSN_)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Architecture:
+- Le fichier App.js contient les routes et la mise en forme de la page
+- La suite de la mise en page se situe via le HOC "Layout" qui contient le Header + Page + Footer
+- Les pages sont gérées dans le dossier "pages"
+- Les pages font appel à des composants eux gérés dans le dossier "components"
+- Le dossier helpers sert à gérer les fonctions utiles dans le projet à divers endroits
+- Le css est split au maximum pour chaque partie de l'application

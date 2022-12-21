@@ -38,7 +38,7 @@ const EpisodeDetail = (props) => {
 
     return (
         episode?.name ?
-            <EpisodeCharacters characterURLs={episode.characters}/>
+            <EpisodeCharacters episode={episode} characterURLs={episode.characters}/>
             :
             ''
     )

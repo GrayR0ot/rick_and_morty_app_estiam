@@ -9,7 +9,7 @@ import {errorNotification} from "../../../helpers/notification.helper";
 const LocationCharacters = (props) => {
 
     const {handleLoadingChange} = useContext(GlobalContext)
-    const {characterURLs} = props
+    const {location, characterURLs} = props
     const [characters, setCharacters] = useState([])
 
     useEffect(() => {
@@ -37,6 +37,7 @@ const LocationCharacters = (props) => {
     return (
         characters.length ?
             <div>
+                <h2>[{location.type}] {location.name} - {location.dimension}</h2>
                 <div className="card-grid">
                     {characters.map((character) => {
                         return (
@@ -51,6 +52,7 @@ const LocationCharacters = (props) => {
 }
 
 LocationCharacters.propTypes = {
+    location: PropTypes.object.isRequired,
     characterURLs: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 

@@ -8,7 +8,7 @@ import {errorNotification} from "../../../helpers/notification.helper";
 const EpisodeCharacters = (props) => {
 
     const {handleLoadingChange} = useContext(GlobalContext)
-    const {characterURLs} = props
+    const {episode, characterURLs} = props
     const [characters, setCharacters] = useState([])
 
     useEffect(() => {
@@ -36,6 +36,7 @@ const EpisodeCharacters = (props) => {
     return (
         characters.length ?
             <div>
+                <h2>{episode.name} - {episode.episode}</h2>
                 <div className="card-grid">
                     {characters.map((character) => {
                         return (
@@ -50,6 +51,7 @@ const EpisodeCharacters = (props) => {
 }
 
 EpisodeCharacters.propTypes = {
+    episode: PropTypes.object.isRequired,
     characterURLs: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
