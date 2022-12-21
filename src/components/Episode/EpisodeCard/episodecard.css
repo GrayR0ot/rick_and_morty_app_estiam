@@ -68,12 +68,7 @@
     color: #999;
 }
 
-.card-footer .card-location {
+.card-footer .card-date {
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-}
-
-.card-footer .card-species {
-    margin-top: 0.25rem;
-    font-size: 0.9rem;
 }

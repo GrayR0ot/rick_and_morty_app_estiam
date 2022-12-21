@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import CharacterCard from "../Character/CharacterCard.component";
+import CharacterCard from "../CharacterCard/CharacterCard.component";
 import SearchBar from "../../Search/SearchBar.component";
 import {useContext, useEffect, useState} from "react";
 import {GlobalContext} from "../../Layout/Layout.component";

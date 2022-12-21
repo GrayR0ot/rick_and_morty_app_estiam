@@ -4,7 +4,7 @@ import axios from "axios";
 import {config} from "../config";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {GlobalContext} from "../components/Layout/Layout.component";
-import CharacterCard from "../components/Characters/Character/CharacterCard.component";
+import CharacterCard from "../components/Characters/CharacterCard/CharacterCard.component";
 import PropTypes from "prop-types";
 
 const CharacterDetailPage = (props) => {

@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
-import {useContext, useState} from "react";
+import {useContext} from "react";
 import {GlobalContext} from "../../Layout/Layout.component";
 import {Link} from "react-router-dom";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faMars, faFire, faMapMarkerAlt} from "@fortawesome/free-solid-svg-icons";
+import {faFire, faMapMarkerAlt, faMars} from "@fortawesome/free-solid-svg-icons";
 import "./charactercard.css"
 
 const CharacterCard = (props) => {
 
     const {theme} = useContext(GlobalContext)
-    const [character, setCharacter] = useState(props.character)
+    const {character} = props
 
     return (
         <div className={`card ${theme}`}>
@@ -20,8 +20,8 @@ const CharacterCard = (props) => {
                 <img src={character.image} alt="card image"/>
                 <div className={`card-name ${theme}`}>{character.name}</div>
                 <div className="card-footer">
-                    <div className={`card-sex`}><FontAwesomeIcon icon={faMars}/> {character.gender}</div>
-                    <div className={`card-species`}><FontAwesomeIcon icon={faFire}/> {character.species}</div>
+                    <div className={`card-other`}><FontAwesomeIcon icon={faMars}/> {character.gender}</div>
+                    <div className={`card-other`}><FontAwesomeIcon icon={faFire}/> {character.species}</div>
                     <div className={`card-location`}><FontAwesomeIcon icon={faMapMarkerAlt}/> {character.location.name}
                     </div>
                 </div>
