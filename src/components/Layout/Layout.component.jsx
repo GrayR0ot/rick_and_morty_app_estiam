@@ -1,6 +1,7 @@
 import {createContext, useState} from "react";
 import Header from "../Header/Header.component";
 import Loader from "../Loader/Loader.component";
+import "./layout.css"
 
 
 export const GlobalContext = createContext()
@@ -21,7 +22,9 @@ const Layout = ({children}) => {
             <div style={{display: loading ? 'none' : 'block'}}>
                 <Header/>
                 <div className={`background ${theme}`}>
-                    {children}
+                    <div className="container">
+                        {children}
+                    </div>
                 </div>
             </div>
         </Provider>
