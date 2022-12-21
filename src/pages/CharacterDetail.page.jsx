@@ -4,11 +4,13 @@ import axios from "axios";
 import {config} from "../config";
 import {errorNotification, successNotification} from "../helpers/notification.helper";
 import {GlobalContext} from "../components/Layout/Layout.component";
+import CharacterCard from "../components/Characters/Character/CharacterCard.component";
+import PropTypes from "prop-types";
 
 const CharacterDetailPage = (props) => {
 
     let {id} = useParams();
-    const {loading, handleLoadingChange} = useContext(GlobalContext)
+    const {handleLoadingChange} = useContext(GlobalContext)
     const [character, setCharacter] = useState()
 
     useEffect(() => {
@@ -22,17 +24,21 @@ const CharacterDetailPage = (props) => {
                 successNotification(`Loaded character '${res.data.name}'`)
 
                 setCharacter(res.data)
+                console.log('Loaded')
             } else errorNotification("Unable to find this character on our API!")
         }).catch((fail) => errorNotification(fail.toString()))
-            .finally(() => handleLoadingChange(false))
+            .finally(() => {
+                handleLoadingChange(false)
+                console.log('Loaded2')
+            })
     }, [])
 
     return (
-        <div>
-            {JSON.stringify(character)}
-        </div>
+        character?.name ?
+            <CharacterCard character={character}/>
+            :
+            ''
     )
-
 }
 
 export default CharacterDetailPage
